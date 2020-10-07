@@ -8,9 +8,24 @@
 import SwiftUI
 
 struct ContentView: View {
+    @State private var bankLocations: [BankLocations] = []
+    @State private var regions = [String]()
+    
     var body: some View {
-        Text("Hello, world!")
-            .padding()
+        NavigationView {
+            List(regions, id: \.self) { region in
+                VStack {
+                    NavigationLink(region, destination: RegionView(bankLocations: $bankLocations, region: region))
+                }
+            }
+            .navigationBarTitle("Regions", displayMode: .inline)
+            .onAppear() {
+                NetworkManger().getPosts { (bankLocations, regions) in
+                    self.regions = regions
+                    self.bankLocations = bankLocations
+                }
+            }
+        }
     }
 }
 

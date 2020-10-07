@@ -11,6 +11,10 @@
 		952AF9FE252E2558005C3D77 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AF9FD252E2558005C3D77 /* ContentView.swift */; };
 		952AFA00252E2558005C3D77 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952AF9FF252E2558005C3D77 /* Assets.xcassets */; };
 		952AFA03252E2558005C3D77 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 952AFA02252E2558005C3D77 /* Preview Assets.xcassets */; };
+		952AFA2D252E26D2005C3D77 /* NetworkManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AFA2C252E26D2005C3D77 /* NetworkManager.swift */; };
+		952AFA34252E2AB3005C3D77 /* BankLocations.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AFA33252E2AB3005C3D77 /* BankLocations.swift */; };
+		952AFA37252E3910005C3D77 /* RegionView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AFA36252E3910005C3D77 /* RegionView.swift */; };
+		952AFA3A252E4CD2005C3D77 /* DetailsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 952AFA39252E4CD2005C3D77 /* DetailsView.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -20,6 +24,10 @@
 		952AF9FF252E2558005C3D77 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		952AFA02252E2558005C3D77 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		952AFA04252E2558005C3D77 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		952AFA2C252E26D2005C3D77 /* NetworkManager.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NetworkManager.swift; sourceTree = "<group>"; };
+		952AFA33252E2AB3005C3D77 /* BankLocations.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BankLocations.swift; sourceTree = "<group>"; };
+		952AFA36252E3910005C3D77 /* RegionView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RegionView.swift; sourceTree = "<group>"; };
+		952AFA39252E4CD2005C3D77 /* DetailsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailsView.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -57,6 +65,10 @@
 				952AF9FF252E2558005C3D77 /* Assets.xcassets */,
 				952AFA04252E2558005C3D77 /* Info.plist */,
 				952AFA01252E2558005C3D77 /* Preview Content */,
+				952AFA2C252E26D2005C3D77 /* NetworkManager.swift */,
+				952AFA33252E2AB3005C3D77 /* BankLocations.swift */,
+				952AFA36252E3910005C3D77 /* RegionView.swift */,
+				952AFA39252E4CD2005C3D77 /* DetailsView.swift */,
 			);
 			path = BankLocations;
 			sourceTree = "<group>";
@@ -138,8 +150,12 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				952AFA2D252E26D2005C3D77 /* NetworkManager.swift in Sources */,
 				952AF9FE252E2558005C3D77 /* ContentView.swift in Sources */,
+				952AFA37252E3910005C3D77 /* RegionView.swift in Sources */,
+				952AFA34252E2AB3005C3D77 /* BankLocations.swift in Sources */,
 				952AF9FC252E2558005C3D77 /* BankLocationsApp.swift in Sources */,
+				952AFA3A252E4CD2005C3D77 /* DetailsView.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

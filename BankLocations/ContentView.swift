@@ -73,7 +73,7 @@ struct ContentView: View {
     
     func getData() {
         getRegionUrl()
-        NetworkManger().getPosts(regionUrl: regionUrl) { (bankLocations, regions) in
+        NetworkManger().getPosts(regionName: selectedRegion, regionUrl: regionUrl) { (bankLocations, regions) in
             self.regions = regions
             self.bankLocations = bankLocations
         }

@@ -9,9 +9,9 @@ import Foundation
 
 class NetworkManger {
     
-    func getPosts(completion: @escaping ([BankLocations], Array<String>) -> ()) {
+    func getPosts(regionUrl: String, completion: @escaping ([BankLocations], Array<String>) -> ()) {
         
-        guard let url = URL(string: "https://www.swedbank.ee/finder.json") else { return }
+        guard let url = URL(string: regionUrl) else { return }
         
         URLSession.shared.dataTask(with: url) { (data, _, _) in
             guard let data = data else { return }

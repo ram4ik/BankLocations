@@ -10,6 +10,9 @@ import SwiftUI
 struct ContentView: View {
     @State private var bankLocations: [BankLocations] = []
     @State private var regions = [String]()
+    @State private var selectedRegion = BankRegions.estonia
+    @State private var regionUrl = ""
+    @State private var showSheetView = false
     
     var body: some View {
         NavigationView {
@@ -20,11 +23,43 @@ struct ContentView: View {
             }
             .navigationBarTitle("Regions", displayMode: .inline)
             .onAppear() {
-                NetworkManger().getPosts { (bankLocations, regions) in
-                    self.regions = regions
-                    self.bankLocations = bankLocations
+                getData()
+            }.navigationBarItems(trailing: Button(action: {
+                showSheetView.toggle()
+            }, label: {
+                Image(systemName: "gear")
+            }))
+        }.onAppear() {
+            getRegionUrl()
+        }.sheet(isPresented: $showSheetView, onDismiss: { getData() }, content: {
+            NavigationView {
+                Form {
+                    Picker("Select country", selection: $selectedRegion) {
+                        ForEach(BankRegions.allCases, id: \.self) { country in
+                            Text(country.rawValue)
+                        }
+                    }
                 }
             }
+        })
+    }
+    
+    func getRegionUrl() {
+        switch selectedRegion {
+            case .estonia:
+                regionUrl = "https://www.swedbank.ee/finder.json"
+            case .latvia:
+                regionUrl = "https://ib.swedbank.lv/finder.json"
+            case .lithuenia:
+                regionUrl = "https://ib.swedbank.lt/finder.json"
+        }
+    }
+    
+    func getData() {
+        getRegionUrl()
+        NetworkManger().getPosts(regionUrl: regionUrl) { (bankLocations, regions) in
+            self.regions = regions
+            self.bankLocations = bankLocations
         }
     }
 }

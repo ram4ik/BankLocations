@@ -24,11 +24,21 @@ struct ContentView: View {
             .navigationBarTitle("Regions", displayMode: .inline)
             .onAppear() {
                 getData()
-            }.navigationBarItems(trailing: Button(action: {
-                showSheetView.toggle()
-            }, label: {
-                Image(systemName: "gear")
-            }))
+            }.navigationBarItems(leading:
+                                    Button(action: {
+                                        getData()
+                                    }, label: {
+                                        Image(systemName: "arrow.counterclockwise")
+                                    })
+                                 ,
+                                 trailing:
+                                    Button(action: {
+                                        showSheetView.toggle()
+                                    }, label: {
+                                        Image(systemName: "gear")
+                                    })
+            )
+            
         }.onAppear() {
             getRegionUrl()
         }.sheet(isPresented: $showSheetView, onDismiss: { getData() }, content: {
@@ -46,12 +56,12 @@ struct ContentView: View {
     
     func getRegionUrl() {
         switch selectedRegion {
-            case .estonia:
-                regionUrl = "https://www.swedbank.ee/finder.json"
-            case .latvia:
-                regionUrl = "https://ib.swedbank.lv/finder.json"
-            case .lithuenia:
-                regionUrl = "https://ib.swedbank.lt/finder.json"
+        case .estonia:
+            regionUrl = "https://www.swedbank.ee/finder.json"
+        case .latvia:
+            regionUrl = "https://ib.swedbank.lv/finder.json"
+        case .lithuenia:
+            regionUrl = "https://ib.swedbank.lt/finder.json"
         }
     }
     

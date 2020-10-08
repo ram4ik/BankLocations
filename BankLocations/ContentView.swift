@@ -31,6 +31,56 @@ struct ContentView: View {
 
 struct ContentView_Previews: PreviewProvider {
     static var previews: some View {
-        ContentView()
+        Group {
+            Group {
+                ContentView()
+                    .previewDevice("iPhone 8")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone 8")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPhone 8 Plus")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone 8 Plus")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPhone 11")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone 11")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPhone 11 Pro")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone 11 Pro")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPhone 11 Pro Max")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone 11 Pro Max")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPhone SE (2nd generation)")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPhone SE (2nd generation)")
+            }
+            Group {
+                ContentView()
+                    .previewDevice("iPod touch (7th generation)")
+                ContentView()
+                    .preferredColorScheme(.dark)
+                    .previewDevice("iPod touch (7th generation)")
+            }
+        }
     }
 }

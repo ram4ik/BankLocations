@@ -14,6 +14,9 @@ struct ContentView: View {
     @State private var regionUrl = ""
     @State private var showSheetView = false
     
+    @State private var newDate = Date()
+    let timer = Timer.publish(every: 3600, on: .current, in: .common).autoconnect()
+    
     var body: some View {
         NavigationView {
             List(regions, id: \.self) { region in
@@ -51,7 +54,10 @@ struct ContentView: View {
                     }
                 }
             }
-        })
+        }).onReceive(timer) { _ in
+            self.newDate = Date()
+            getData()
+        }
     }
     
     func getRegionUrl() {

@@ -62,16 +62,13 @@
 		952AF9FA252E2558005C3D77 /* BankLocations */ = {
 			isa = PBXGroup;
 			children = (
-				952AF9FB252E2558005C3D77 /* BankLocationsApp.swift */,
-				952AF9FD252E2558005C3D77 /* ContentView.swift */,
+				958D152925304A1900A0389C /* Model */,
+				958D152825304A0800A0389C /* ViewModel */,
+				958D1527253049F300A0389C /* Views */,
+				958D1525253049DE00A0389C /* Services */,
 				952AF9FF252E2558005C3D77 /* Assets.xcassets */,
 				952AFA04252E2558005C3D77 /* Info.plist */,
 				952AFA01252E2558005C3D77 /* Preview Content */,
-				952AFA2C252E26D2005C3D77 /* NetworkManager.swift */,
-				952AFA33252E2AB3005C3D77 /* BankLocations.swift */,
-				952AFA36252E3910005C3D77 /* RegionView.swift */,
-				952AFA39252E4CD2005C3D77 /* DetailsView.swift */,
-				952AFA3D252EED47005C3D77 /* BankRegions.swift */,
 			);
 			path = BankLocations;
 			sourceTree = "<group>";
@@ -82,6 +79,41 @@
 				952AFA02252E2558005C3D77 /* Preview Assets.xcassets */,
 			);
 			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		958D1525253049DE00A0389C /* Services */ = {
+			isa = PBXGroup;
+			children = (
+				952AFA2C252E26D2005C3D77 /* NetworkManager.swift */,
+			);
+			name = Services;
+			sourceTree = "<group>";
+		};
+		958D1527253049F300A0389C /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				952AF9FB252E2558005C3D77 /* BankLocationsApp.swift */,
+				952AF9FD252E2558005C3D77 /* ContentView.swift */,
+				952AFA36252E3910005C3D77 /* RegionView.swift */,
+				952AFA39252E4CD2005C3D77 /* DetailsView.swift */,
+			);
+			name = Views;
+			sourceTree = "<group>";
+		};
+		958D152825304A0800A0389C /* ViewModel */ = {
+			isa = PBXGroup;
+			children = (
+				952AFA3D252EED47005C3D77 /* BankRegions.swift */,
+			);
+			path = ViewModel;
+			sourceTree = "<group>";
+		};
+		958D152925304A1900A0389C /* Model */ = {
+			isa = PBXGroup;
+			children = (
+				952AFA33252E2AB3005C3D77 /* BankLocations.swift */,
+			);
+			name = Model;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */

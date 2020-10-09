@@ -72,8 +72,16 @@ struct ContentView: View {
     }
     
     func getData() {
+        let nm = NetworkManger()
+        
         getRegionUrl()
-        NetworkManger().getPosts(regionName: selectedRegion, regionUrl: regionUrl) { (bankLocations, regions) in
+        
+        nm.getPosts(regionName: selectedRegion, regionUrl: regionUrl) { (bankLocations, regions) in
+            self.regions = regions
+            self.bankLocations = bankLocations
+        }
+        
+        nm.retriveDataFromJsonFile(selectedRegion.rawValue) { (bankLocations, regions) in
             self.regions = regions
             self.bankLocations = bankLocations
         }
